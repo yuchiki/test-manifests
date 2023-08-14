@@ -13,3 +13,10 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
+    - name: default
+      hostname: "*.yuchiki.net"
+      port: 80
+      protocol: HTTP
+      allowedRoutes:
+        namespaces:
+          from: All
