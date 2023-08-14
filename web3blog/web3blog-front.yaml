@@ -25,11 +25,9 @@ kind: Service
 metadata:
   name: web3front-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: web3-front
   ports:
     - port: 3000
       targetPort: 3000
-      nodePort: 30010
-
