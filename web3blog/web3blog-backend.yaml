@@ -1,0 +1,45 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: web3-backend-deployment
+  namespace: blog-yuriacats-net
+spec:
+  selector:
+    matchLabels:
+      app: web3-backend
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: web3-backend
+    spec:
+      containers:
+      - name: web3-backend
+        image: 561712284442.dkr.ecr.ap-northeast-1.amazonaws.com/web3blog_backend:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: PORT
+          value: "8000"
+        - name: SQL_USER
+          value: "backend"
+        - name: SQL_PASSWORD
+          value: "toor"
+        - name: SQL_HOST
+          value: "web3blog-mysql"
+      imagePullSecrets:
+        - name: yuria-aws-ecr-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web3backend-service
+  namespace: blog-yuriacats-net
+spec:
+  type: ClusterIP
+  selector:
+    app: web3-backend
+  ports:
+    - port: 8000
+      targetPort: 8000
+  

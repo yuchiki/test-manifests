@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql
+  name: web3blog-mysql
   namespace: blog-yuriacats-net
 spec:
   ports:
