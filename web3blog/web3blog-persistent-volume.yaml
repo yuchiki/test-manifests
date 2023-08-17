@@ -22,4 +22,4 @@ spec:
         - key: blog.yuriacats.net_persistent-volume_mysql-data
           operator: In
           values:
-          - true
+          - "true"
