@@ -4,7 +4,7 @@ metadata:
   name: blog-yuriacats-net-mysql-data-claim
   namespace: blog-yuriacats-net
 spec:
-  storageClassName: local-storage
+  storageClassName: ""
   accessModes:
     - ReadWriteOnce
   resources:
