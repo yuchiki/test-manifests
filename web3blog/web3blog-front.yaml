@@ -2,7 +2,7 @@ apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
   name: web3-front-deployment
-  namespace: blog.yuriacats.net
+  namespace: blog-yuriacats-net
 spec:
   selector:
     matchLabels:
@@ -25,7 +25,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: web3front-service
-  namespace: blog.yuriacats.net
+  namespace: blog-yuriacats-net
 spec:
   type: ClusterIP
   selector:

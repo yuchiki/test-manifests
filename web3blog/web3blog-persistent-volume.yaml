@@ -4,7 +4,7 @@ metadata:
   name: blog.yuriacats.net/mysql-data
 spec:
   claimRef:
-    namespace: blog.yuriacats.net
+    namespace: blog-yuriacats-net
     name: blog.yuriacats.net/mysql-data-claim
   capacity:
     storage: 10Gi
