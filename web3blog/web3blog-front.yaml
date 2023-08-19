@@ -15,9 +15,13 @@ spec:
     spec:
       containers:
       - name: web3-front
-        image: 561712284442.dkr.ecr.ap-northeast-1.amazonaws.com/web3blog_frontend:latest
+        image: 561712284442.dkr.ecr.ap-northeast-1.amazonaws.com/web3blog_frontend:e12fcda9c175b41da410d20b7efdf6a3a67181ac
         ports:
         - containerPort: 3000
+        env:
+        - name: BLOGAPI
+          value: "http://web3backend-service:80"
+
       imagePullSecrets:
         - name: yuria-aws-ecr-secret
 ---
