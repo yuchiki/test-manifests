@@ -14,7 +14,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: ""
   local:
-    path: /var/lib/kubernetes-peristent-volume/blog.yuriacats.net/mysql-data
+    path: /var/lib/kubernetes-persistent-volume/blog.yuriacats.net/mysql-data
   nodeAffinity:
     required:
       nodeSelectorTerms:
