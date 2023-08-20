@@ -13,3 +13,10 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
+    - name: yuriacats
+      hostname: "blog.yuriacats.net"
+      port: 8080
+      protocol: HTTP
+      allowedRoutes:
+        namespaces:
+          from: All

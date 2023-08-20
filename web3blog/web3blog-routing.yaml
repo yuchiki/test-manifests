@@ -8,7 +8,7 @@ spec:
     - name: gateway
       namespace: istio-gateway
       sectionName: default
-  hostnames: ["web3blog.yuchiki.net"]
+  hostnames: ["web3blog.yuchiki.net", "blog.yuriacats.net"]
   rules:
     - matches:
         - path:
