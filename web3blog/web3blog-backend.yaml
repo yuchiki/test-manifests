@@ -14,19 +14,19 @@ spec:
         app: web3-backend
     spec:
       containers:
-      - name: web3-backend
-        image: 561712284442.dkr.ecr.ap-northeast-1.amazonaws.com/web3blog:e12fcda9c175b41da410d20b7efdf6a3a67181ac
-        ports:
-        - containerPort: 80
-        env:
-        - name: PORT
-          value: "80"
-        - name: SQL_USER
-          value: "backend"
-        - name: SQL_PASSWORD
-          value: "toor"
-        - name: SQL_HOST
-          value: "web3blog-mysql"
+        - name: web3-backend
+          image: public.ecr.aws/x6d7c5q4/yuriacatsblog/backend:c9d7c920fb7713bd706403b4c24a91fb48144f47
+          ports:
+            - containerPort: 80
+          env:
+            - name: PORT
+              value: "80"
+            - name: SQL_USER
+              value: "backend"
+            - name: SQL_PASSWORD
+              value: "toor"
+            - name: SQL_HOST
+              value: "web3blog-mysql"
       imagePullSecrets:
         - name: yuria-aws-ecr-secret
 ---
@@ -42,4 +42,3 @@ spec:
   ports:
     - port: 80
       targetPort: 80
- 
