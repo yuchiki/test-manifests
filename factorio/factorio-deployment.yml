@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: factorio-server
-          image: factoriotools/factorio
+          image: factoriotools/factorio:1.1.87
           ports:
             containerPort: 34197
           env:
