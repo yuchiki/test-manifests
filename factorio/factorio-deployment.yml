@@ -21,3 +21,10 @@ spec:
           env:
             - name: GENERATE_NEW_SAVE
               value: true
+          volumeMounts:
+            - name: factorio-strage
+              mountPath: /opt/factorio
+      volumes:
+        - name: factorio-strage
+          persistentVolumeClaim:
+            claimName: factorio-volume-claim
