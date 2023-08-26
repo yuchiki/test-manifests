@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: factorio-deployment
+  namespace: factorio
+spec:
+  selector:
+    matchLabels:
+      app: factorio-server
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: factorio-server
+    spec:
+      containers:
+        - name: factorio-server
+          image: factoriotools/factorio
+          ports:
+            containerPort: 34197
+          env:
+            - name: GENERATE_NEW_SAVE
+              value: true

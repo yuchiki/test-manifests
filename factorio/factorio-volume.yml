@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: factorio-volume
+  namespace: factorio
+spec:
+  claimRef:
+    namespace: factorio
+    name: factorio-volume-claim
+  capacity:
+    storage: 20Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: ""
+  local:
+    path: /var/lib/kubernetes-persistent-volume/factorio/
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: factorio_volume
+              operator: In
+              values:
+                - "true"

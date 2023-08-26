@@ -20,3 +20,10 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
+    - name: factorio
+      hostname: "factorio.yuchiki.net"
+      port: 34197
+      protocol: UDP
+      allowedRoutes:
+        namespace:
+          from: factorio
