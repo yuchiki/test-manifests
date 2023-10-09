@@ -43,4 +43,4 @@ spec:
       volumes:
         - name: mongodb-persistent-storage
           persistentVolumeClaim:
-            claimName: growi-mongodb-data-claim
+            claimName: growi-mongo-data-claim
