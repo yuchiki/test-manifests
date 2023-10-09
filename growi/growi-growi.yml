@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: growi
+  namespace: growi
+spec:
+  ports:
+    - port: 3000
+  selector:
+    app: growi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: growi
+  namespace: growi
+spec:
+  selector:
+    matchLabels:
+      app: growi
+  template:
+    metadata:
+      labels:
+        app: growi
+    spec:
+      containers:
+        - image: weseek/growi:6.2.1
+          name: growi
+          env:
+            - name: MONGO_URI
+              value: mongodb://growi-machine-user:password@growi-mongodb:27017/growi
+            - name: ELASTICSEARCH_URI
+              value: http://growi-elasticsearch:9200/growi
+          ports:
+            - containerPort: 3000
+              name: growi
