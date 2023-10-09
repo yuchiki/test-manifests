@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: growi-elasticsearch
+  namespace: growi
+spec:
+  ports:
+    - port: 9200
+  selector:
+    app: elasticsearch
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elasticsearch
+  namespace: growi
+spec:
+  selector:
+    matchLabels:
+      app: elasticsearch
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+    spec:
+      containers:
+        - image: public.ecr.aws/i2c5f4g8/home-growi/elasticsearch-for-growi:latest
+          name: elasticsearch
+          env:
+            - name: discovery.type
+              value: single-node
+            - name: xpack.security.enabled
+              value: "false"
+          ports:
+            - containerPort: 9200
+              name: elasticsearch
