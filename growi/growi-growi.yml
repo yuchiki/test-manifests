@@ -31,6 +31,8 @@ spec:
               value: mongodb://growi-machine-user:password@growi-mongodb:27017/growi
             - name: ELASTICSEARCH_URI
               value: http://growi-elasticsearch:9200/growi
+            - name: PASSWORD_SEED
+              value: changeme
           ports:
             - containerPort: 3000
               name: growi
