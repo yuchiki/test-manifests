@@ -1,0 +1,19 @@
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: growi-http-route
+  namespace: growi
+spec:
+  parentRefs:
+    - name: gateway
+      namespace: istio-gateway
+      sectionName: default
+  hostnames: ["growi.yuchiki.net"]
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: growi
+          port: 3000
