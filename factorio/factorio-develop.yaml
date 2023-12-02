@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: factorio-deployment
+  namespace: factorio
+spec:
+  selector:
+    matchLabels:
+      app: factorio
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: factorio
+    spec:
+      containers:
+        - name: factorio
+          image: factoriotools/factorio
+          ports:
+            - protocol: UDP
+              port: 34197
+              targetPort: 34197
+              containerPort: 34197
+            - port: 27015
+              targetPort: 27015
+              containerPort: 27015
+          volumeMounts:
+            - mountPath: /factorio
+              name: factorio-volume
+      volumes:
+        - name: factorio-volume
+          persistentVolumeClaim:
+            claimName: factorio-volume-claim
