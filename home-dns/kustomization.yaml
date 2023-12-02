@@ -1,0 +1,11 @@
+resources:
+- ./home-dns-namespace.yaml
+- ./home-dns-deployment.yaml
+- ./home-dns-service.yaml
+
+configMapGenerator:
+- name: coredns-config
+  namespace: home-dns
+  files:
+  - Corefile
+
