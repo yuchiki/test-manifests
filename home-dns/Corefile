@@ -1,0 +1,21 @@
+(default) {
+    forward . 8.8.8.8
+    errors
+    log
+    cache
+}
+
+home {
+   hosts {
+    192.168.40.1 router.home
+    192.168.40.2 yurichikiserver.home
+    192.168.40.2 growi.home
+    192.168.40.2 factorio.home
+    fallthrough
+   }
+   import default
+}
+
+. {
+    import default
+}
