@@ -17,12 +17,10 @@ spec:
         - name: factorio
           image: factoriotools/factorio:stable
           ports:
-            - protocol: UDP
-              port: 34197
-              targetPort: 34197
+            - name: factorio
+              protocol: UDP
               containerPort: 34197
-            - port: 27015
-              targetPort: 27015
+            - name: factorio-rcon
               containerPort: 27015
           volumeMounts:
             - mountPath: /factorio

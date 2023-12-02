@@ -14,10 +14,12 @@ spec:
   selector:
     app: factorio
   ports:
-    - protocol: UDP
+    - name: factorio
+      protocol: UDP
       port: 34197
       targetPort: 34197
-      nodePort: 34197
-    - port: 27015
+      nodePort: 30893
+    - name: factorio-rcon
+      port: 27015
       targetPort: 27015
-      nodePort: 27015
+      nodePort: 30894
