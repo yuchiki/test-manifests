@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: factorio
-          image: factoriotools/factorio
+          image: factoriotools/factorio:stable
           ports:
             - protocol: UDP
               port: 34197
