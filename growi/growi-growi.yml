@@ -4,8 +4,10 @@ metadata:
   name: growi
   namespace: growi
 spec:
+  type: NodePort
   ports:
     - port: 3000
+      nodePort: 30961
   selector:
     app: growi
 ---
