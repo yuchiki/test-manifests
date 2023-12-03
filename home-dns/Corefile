@@ -10,6 +10,7 @@ home {
     192.168.40.1 router.home
     192.168.40.2 yurichikiserver.home
     192.168.40.2 growi.home
+    192.168.40.2 argocd.home
     192.168.40.2 factorio.home
     fallthrough
    }
