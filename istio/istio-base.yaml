@@ -36,20 +36,3 @@ spec:
   destination:
     server: "https://kubernetes.default.svc"
     namespace: istio-system
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: istio-ingressgateway
-  namespace: istio-system
-spec:
-  project: istio
-  source:
-    chart: istio/gateway
-    repoURL:  https://istio-release.storage.googleapis.com/charts
-    targetRevision: 1.22.1
-    helm:
-      releaseName: istio-gateway
-  destination:
-    server: "https://kubernetes.default.svc"
-    namespace: istio-system
