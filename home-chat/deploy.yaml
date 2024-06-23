@@ -14,4 +14,8 @@ spec:
         app: home-chat
     spec:
       containers:
-        - name: home-chat
+        - image: public.ecr.aws/i2c5f4g8/simple-chat-for-home:v0.1.6
+          name: home-chat
+          ports:
+            - containerPort: 3000
+              name: home-chat
