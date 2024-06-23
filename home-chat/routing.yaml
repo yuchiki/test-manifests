@@ -7,9 +7,6 @@ spec:
   parentRefs:
     - name: gateway
       namespace: istio-gateway
-      sectionName: default
-    - name: gateway
-      namespace: istio-gateway
       sectionName: home-chat
   hostnames: ["yurichikiserver.home" ]
   rules:
