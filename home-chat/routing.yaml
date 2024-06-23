@@ -10,7 +10,7 @@ spec:
       sectionName: default
     - name: gateway
       namespace: istio-gateway
-      sectionName: yuriacats
+      sectionName: home-chat
   hostnames: ["yurichikiserver.home" ]
   rules:
     - matches:
