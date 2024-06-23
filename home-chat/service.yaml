@@ -10,7 +10,7 @@ metadata:
   name: home-chat-service
   namespace: home-chat
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: home-chat
   ports:
