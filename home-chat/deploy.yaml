@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home-chat-deployment
+  namespace: home-chat
+spec:
+  selector:
+    matchLabels:
+      app: home-chat
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: home-chat
+    spec:
+      containers:
+        - name: home-chat
