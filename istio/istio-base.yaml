@@ -13,9 +13,26 @@ spec:
   source:
     chart: istio/base
     repoURL:  https://istio-release.storage.googleapis.com/charts
-    targetRevision: 1.22,.1
+    targetRevision: 1.22.1
     helm:
       releaseName: istio-base
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: istio-system
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio
+  namespace: istio-system
+spec:
+  project: default
+  source:
+    chart: istio/istiod
+    repoURL:  https://istio-release.storage.googleapis.com/charts
+    targetRevision: 1.22.1
+    helm:
+      releaseName: istio
   destination:
     server: "https://kubernetes.default.svc"
     namespace: istio-system
