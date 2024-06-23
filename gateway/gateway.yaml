@@ -21,9 +21,15 @@ spec:
         namespaces:
           from: All
     - name: home # TODO: TLS サポート。argocdがHTTPをHTTPSにリダイレクトするので、TLSをサポートする必要がある。
+      protocol: HTTPS
+      port: 443
       hostname: "*.home"
-      port: 80
-      protocol: HTTP
+      tls:
+        mode: Terminate
+        certificateRefs:
+        - kind: Secret
+          group: ""
+          name: growi-home-tls
       allowedRoutes:
         namespaces:
           from: All
