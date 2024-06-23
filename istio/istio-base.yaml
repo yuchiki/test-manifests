@@ -9,7 +9,7 @@ metadata:
   name: istio-base
   namespace: istio-system
 spec:
-  project: default
+  project: istio-base
   source:
     chart: istio/base
     repoURL:  https://istio-release.storage.googleapis.com/charts
@@ -23,10 +23,10 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio
+  name: istiod
   namespace: istio-system
 spec:
-  project: default
+  project: istio
   source:
     chart: istio/istiod
     repoURL:  https://istio-release.storage.googleapis.com/charts
