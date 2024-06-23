@@ -15,5 +15,5 @@ spec:
             type: PathPrefix
             value: /
       backendRefs:
-        - name: home-chat
+        - name: home-chat-service
           port: 3000
