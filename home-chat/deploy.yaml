@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home-chat-deployment
+  namespace: home-chat
+spec:
+  selector:
+    matchLabels:
+      app: home-chat
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: home-chat
+    spec:
+      containers:
+        - image: public.ecr.aws/i2c5f4g8/simple-chat-for-home:v0.1.5
+          name: home-chat
+          ports:
+            - containerPort: 3000
+              name: home-chat
