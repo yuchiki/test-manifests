@@ -31,6 +31,8 @@ spec:
               value: single-node
             - name: xpack.security.enabled
               value: "false"
+            - name: ES_JAVA_OPTS # min and max heap size.
+              value: "-Xms256m -Xmx256m"
           ports:
             - containerPort: 9200
               name: elasticsearch
