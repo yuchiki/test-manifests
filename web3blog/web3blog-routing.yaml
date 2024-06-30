@@ -6,10 +6,10 @@ metadata:
 spec:
   parentRefs:
     - name: gateway
-      namespace: istio-gateway
+      namespace: istio-ingress
       sectionName: default
     - name: gateway
-      namespace: istio-gateway
+      namespace: istio-ingress
       sectionName: yuriacats
   hostnames: ["web3blog.yuchiki.net", "blog.yuriacats.net"]
   rules:

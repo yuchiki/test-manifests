@@ -6,7 +6,7 @@ metadata:
 spec:
   parentRefs:
     - name: gateway
-      namespace: istio-gateway
+      namespace: istio-ingress
       sectionName: home
   hostnames: ["yurichikiserver.home" ]
   rules:

@@ -26,7 +26,7 @@ metadata:
 spec:
   parentRefs:
     - name: gateway
-      namespace: istio-gateway
+      namespace: istio-ingress
       sectionName: home
   hostnames: ["growi.home"]
   rules:
