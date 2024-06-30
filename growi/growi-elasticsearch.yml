@@ -26,11 +26,16 @@ spec:
       containers:
         - image: public.ecr.aws/i2c5f4g8/home-growi/elasticsearch-for-growi:latest
           name: elasticsearch
+          resources:
+            limits:
+              memory: 1Gi
           env:
             - name: discovery.type
               value: single-node
             - name: xpack.security.enabled
               value: "false"
+            - name: ES_JAVA_OPTS
+              value: "-Xms512m -Xmx512m"
           ports:
             - containerPort: 9200
               name: elasticsearch
