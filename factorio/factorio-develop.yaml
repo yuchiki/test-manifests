@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: factorio
-          image: factoriotools/factorio:1.1.101
+          image: factoriotools/factorio:1.1.109
           ports:
             - name: factorio
               protocol: UDP
