@@ -8,7 +8,7 @@ spec:
   parentRefs:
     - name: gateway
       namespace: istio-ingress
-      sectionName: home
+      sectionName: argocd 
   hostnames: ["argocd.home"]
   rules:
     - matches:
@@ -17,4 +17,4 @@ spec:
             value: /
       backendRefs:
         - name: argocd-server
-          port: 80
+          port: 443 
