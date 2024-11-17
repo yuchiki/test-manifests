@@ -82,6 +82,8 @@ data:
     no-autoupdate: true
     ingress:
     - hostname: blog2.yuriacats.net
-      service: http://localhost:8080
+      service: http://gateway-istio.istio-ingress.svc.cluster.local:8080
+      originRequest:
+          httpHostHeader: blog2.yuriacats.net
     # This rule matches any traffic which didn't match a previous rule, and responds with HTTP 404.
     - service: http_status:404
