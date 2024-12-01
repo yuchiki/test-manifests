@@ -11,7 +11,7 @@ spec:
     - name: gateway
       namespace: istio-ingress
       sectionName: yuriacats
-  hostnames: ["web3blog.yuchiki.net", "blog.yuriacats.net","blog2.yuriacats.net"]
+  hostnames: ["web3blog.yuchiki.net", "blog.yuriacats.net"]
   rules:
     - matches:
         - path:

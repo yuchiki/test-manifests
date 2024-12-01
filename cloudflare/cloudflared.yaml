@@ -81,10 +81,10 @@ data:
     metrics: 0.0.0.0:2000
     no-autoupdate: true
     ingress:
-    - hostname: blog2.yuriacats.net
+    - hostname: blog.yuriacats.net
       service: http://gateway-istio.istio-ingress.svc.cluster.local:8080
       originRequest:
-          httpHostHeader: blog2.yuriacats.net
+          httpHostHeader: blog.yuriacats.net
     - hostname: growi.yuriacats.net
       service: http://gateway-istio.istio-ingress.svc.cluster.local:8080
       originRequest:
