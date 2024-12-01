@@ -5,7 +5,7 @@ metadata:
   namespace: growi
 spec:
   parentRefs:
-    - name: gateway
+    - name: yuchiki
       namespace: istio-ingress
       sectionName: yuchiki
     - name: yuriacats
