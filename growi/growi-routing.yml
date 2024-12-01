@@ -5,10 +5,10 @@ metadata:
   namespace: growi
 spec:
   parentRefs:
-    - name: yuchiki
+    - name: gateway
       namespace: istio-ingress
       sectionName: yuchiki
-    - name: yuriacats
+    - name: gateway
       namespace: istio-ingress
       sectionName: yuriacats
   hostnames: ["growi.yuchiki.net","growi.yuriacats.net"]
