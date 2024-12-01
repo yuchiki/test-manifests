@@ -8,7 +8,10 @@ spec:
     - name: gateway
       namespace: istio-ingress
       sectionName: yuchiki
-  hostnames: ["growi.yuchiki.net"]
+    - name: yuriacats
+      namespace: istio-ingress
+      sectionName: yuriacats
+  hostnames: ["growi.yuchiki.net","growi.yuriacats.net"]
   rules:
     - matches:
         - path:
