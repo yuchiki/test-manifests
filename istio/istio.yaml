@@ -27,13 +27,20 @@ spec:
       certificateRefs:
       - kind: Secret
         group: ""
-        name: yurichiki-server-home-tls 
+        name: yurichiki-server-home-tls
     allowedRoutes:
       namespaces:
         from: All
   - name: yuchiki
     hostname: "*.yuchiki.net"
     port: 8080
+    protocol: HTTP
+    allowedRoutes:
+      namespaces:
+        from: All
+  - name: yurichiki
+    hostname: "*.yurichiki.click"
+    port: 80
     protocol: HTTP
     allowedRoutes:
       namespaces:
