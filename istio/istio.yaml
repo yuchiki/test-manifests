@@ -40,7 +40,7 @@ spec:
         from: All
   - name: yurichiki
     hostname: "*.yurichiki.click"
-    port: 80
+    port: 8080
     protocol: HTTP
     allowedRoutes:
       namespaces:
