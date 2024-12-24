@@ -3,6 +3,13 @@ kind: Namespace
 metadata:
   name: istio-ingress
 ---
+// service account
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: gateway-istio
+  namespace: istio-ingress
+---
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
