@@ -93,7 +93,7 @@ data:
       originRequest:
           httpHostHeader: growi.yuriacats.net
     - hostname: growi.yurichiki.click
-        service: http://gateway-istio.istio-ingress.svc.cluster.local:80
+        service: http://gateway-istio.istio-ingress.svc.cluster.local:8080
         originRequest:
             httpHostHeader: growi.yurichiki.click
     # This rule matches any traffic which didn't match a previous rule, and responds with HTTP 404.
