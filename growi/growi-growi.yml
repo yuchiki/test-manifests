@@ -26,7 +26,7 @@ spec:
         app: growi
     spec:
       containers:
-        - image: weseek/growi:7.0
+        - image: weseek/growi:7.1
           name: growi
           env:
             - name: MONGO_URI
