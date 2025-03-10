@@ -14,6 +14,8 @@ kind: Gateway
 metadata:
   name: gateway
   namespace: istio-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   gatewayClassName: istio
   listeners:
@@ -51,3 +53,12 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
+  - name: local-yurichiki
+    hostname: "*.local.yurichiki.click"
+    port: 443
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - kind: Secret
+        group: ""
+        name: yurichiki-server-local-tls
