@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 'growi'
+spec:
+  destination:
+    namespace: growi
+    server: https://kubernetes.default.svc
+  source:
+    path: growi
+    repoURL: 'https://github.com/yuchiki/test-manifests'
+    targetRevision: add_argocd_manifest
+  sources: []
+  project: default
