@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: growi-set
+  namespace: argocd  # or argo-cd-appsets
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: in-cluster
+            name: growi
+            path: growi
+  template:
+    metadata:
+      name: '{{name}}'
+    spec:
+      project: default
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{name}}'
+      source:
+        repoURL: https://github.com/yuchiki/test-manifests
+        targetRevision: add_argocd_manifest
+        path: '{{path}}'
