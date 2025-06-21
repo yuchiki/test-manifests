@@ -6,7 +6,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
-  gatewayClassName: istio
+  gatewayClassName: istio-ingress
   listeners:
   - name: yuriacats
     hostname: "*.yuriacats.net"

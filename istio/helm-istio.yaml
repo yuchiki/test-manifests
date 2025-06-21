@@ -4,18 +4,25 @@ repositories:
 
 releases:
   - name: istiod
-    namespace: istio
+    namespace: istio-ingress
     chart: istio/istiod
     version: 1.22.1  # 必要に応じてバージョンを調整
     createNamespace: true
     values:
       - global:
-          istioNamespace: istio
+          istioNamespace: istio-ingress
 
   - name: istio-ingressgateway
-    namespace: istio
+    namespace: istio-ingress
     chart: istio/gateway
     version: 1.22.1
     values:
       - service:
-          type: LoadBalancer  # NodePortにしたい場合は変更
+          type: NodePort
+          Ports:
+            - port: 80
+              targetPort: 80
+              name: http
+            - port: 443
+              targetPort: 443
+              name: https
