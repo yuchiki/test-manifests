@@ -43,7 +43,7 @@ spec:
       namespaces:
         from: All
   - name: local-yurichiki
-    protocols: HTTPS
+    protocol: HTTPS
     hostname: "*.local.yurichiki.click"
     port: 443
     tls:
