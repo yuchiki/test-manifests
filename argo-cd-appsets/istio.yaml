@@ -1,0 +1,8 @@
+project: default
+source:
+  repoURL: https://github.com/yuchiki/test-manifests
+  path: istio
+  targetRevision: master
+destination:
+  server: https://kubernetes.default.svc
+  namespace: istio-ingress
