@@ -16,6 +16,21 @@ spec:
           - name: argo-cd-appsets
             cluster: in-cluster
             path: argo-cd-appsets
+          - name: cloudflare
+            cluster: in-cluster
+            path: cloudflare
+          - name: factorio
+            cluster: in-cluster
+            path: factorio
+          - name: home-chat
+            cluster: in-cluster
+            path: home-chat
+          - name: home-dns
+            cluster: in-cluster
+            path: home-dns
+          - name: web3blog
+            cluster: in-cluster
+            path: web3blog
 
   template:
     metadata:
