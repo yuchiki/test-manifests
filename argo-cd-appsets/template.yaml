@@ -7,9 +7,16 @@ spec:
   generators:
     - list:
         elements:
-          - cluster: in-cluster
-            name: growi
+          - name: growi
+            cluster: in-cluster
             path: growi
+          - name: istio-ingress
+            cluster: in-cluster
+            path: istio
+          - name: argo-cd-appsets
+            cluster: in-cluster
+            path: argo-cd-appsets
+
   template:
     metadata:
       name: '{{name}}'
