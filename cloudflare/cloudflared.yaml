@@ -84,15 +84,15 @@ data:
     no-autoupdate: true
     ingress:
     - hostname: blog.yuriacats.net
-      service: http://gateway-istio.istio-ingress.svc.cluster.local:8080
+      service: http://istio-ingress.gateway-istio.svc.cluster.local:8080
       originRequest:
           httpHostHeader: blog.yuriacats.net
     - hostname: growi.yuriacats.net
-      service: http://gateway-istio.istio-ingress.svc.cluster.local:8080
+      service: http://istio-ingress.gateway-istio.svc.cluster.local:8080
       originRequest:
           httpHostHeader: growi.yuriacats.net
     - hostname: growi.yurichiki.click
-      service: http://gateway-istio.istio-ingress.svc.cluster.local:8080
+      service: http://istio-ingress.gateway-istio.svc.cluster.local:8080
       originRequest:
           httpHostHeader: growi.yurichiki.click
     # This rule matches any traffic which didn't match a previous rule, and responds with HTTP 404.
