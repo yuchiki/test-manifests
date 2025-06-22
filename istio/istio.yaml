@@ -5,6 +5,7 @@ metadata:
   namespace: istio-ingress
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
+    networking.istio.io/service-type: ClsuterIP
 spec:
   gatewayClassName: istio
   listeners:
