@@ -1,0 +1,46 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: growi-set
+  namespace: argocd  # or argo-cd-appsets
+spec:
+  generators:
+    - list:
+        elements:
+          - name: growi
+            cluster: in-cluster
+            path: growi
+          - name: istio-ingress
+            cluster: in-cluster
+            path: istio
+          - name: argo-cd-appsets
+            cluster: in-cluster
+            path: argo-cd-appsets
+          - name: cloudflare
+            cluster: in-cluster
+            path: cloudflare
+          - name: factorio
+            cluster: in-cluster
+            path: factorio
+          - name: home-chat
+            cluster: in-cluster
+            path: home-chat
+          - name: home-dns
+            cluster: in-cluster
+            path: home-dns
+          - name: web3blog
+            cluster: in-cluster
+            path: web3blog
+
+  template:
+    metadata:
+      name: '{{name}}'
+    spec:
+      project: default
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{name}}'
+      source:
+        repoURL: https://github.com/yuchiki/test-manifests
+        targetRevision: master
+        path: '{{path}}'

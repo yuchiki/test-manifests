@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: istio-ingress
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: gateway-istio
+  namespace: istio-ingress
+---
+

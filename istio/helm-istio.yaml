@@ -1,0 +1,13 @@
+repositories:
+  - name: istio
+    url: https://istio-release.storage.googleapis.com/charts
+
+releases:
+  - name: istiod
+    namespace: istio-ingress
+    chart: istio/istiod
+    version: 1.22.1  # 必要に応じてバージョンを調整
+    createNamespace: true
+    values:
+      - global:
+          istioNamespace: istio-ingress
