@@ -42,5 +42,5 @@ spec:
         namespace: '{{name}}'
       source:
         repoURL: https://github.com/yuchiki/test-manifests
-        targetRevision: add_argocd_manifest
+        targetRevision: master
         path: '{{path}}'
